@@ -1,0 +1,19 @@
+{
+  "name": "bufalostudio-design",
+  "version": "1.0.0",
+  "description": "Búfalo Studio - State of AI Design Editorial & Engineering Platform",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "start": "python3 -m http.server 3000"
+  },
+  "keywords": [
+    "antigravity-cli",
+    "design-system",
+    "data-science",
+    "photography",
+    "web-development"
+  ],
+  "author": "Búfalo Studio",
+  "license": "MIT"
+}

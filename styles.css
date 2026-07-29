@@ -1,0 +1,224 @@
+/* Búfalo Studio - State of AI Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --bg-primary: #EDEDED;
+  --bg-secondary: #171717;
+  --text-primary: #171717;
+  --text-secondary: #444444;
+  --text-light: #EDEDED;
+  --accent-red: #DA0037;
+  --border-color: rgba(23, 23, 23, 0.12);
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body.theme-dark {
+  --bg-primary: #171717;
+  --bg-secondary: #0A0A0A;
+  --text-primary: #EDEDED;
+  --text-secondary: #A3A3A3;
+  --border-color: rgba(237, 237, 237, 0.15);
+  --card-bg: rgba(30, 30, 30, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.7s cubic-bezier(0.16, 1, 0.3, 1), color 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-red);
+  border-radius: 3px;
+}
+
+/* Background Subtle Technical Grid */
+.bg-tech-grid {
+  background-image: linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+                    linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Typography Utility Classes */
+.font-mono-tech {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-secondary);
+}
+
+.text-display {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.leading-editorial {
+  line-height: 1.6;
+}
+
+/* Accent Red Interactions */
+.buffalo-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.buffalo-underline::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent-red);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.buffalo-underline:hover::after {
+  width: 100%;
+}
+
+.btn-buffalo-primary {
+  background-color: var(--accent-red);
+  color: #EDEDED;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  padding: 1rem 2.25rem;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(218, 0, 55, 0.25);
+  border: 1px solid var(--accent-red);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-buffalo-primary:hover {
+  transform: translateY(-2px);
+  background-color: #C00030;
+  box-shadow: 0 15px 40px rgba(218, 0, 55, 0.4);
+}
+
+.btn-buffalo-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
+  font-weight: 600;
+  padding: 1rem 2.25rem;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-buffalo-secondary:hover {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+  transform: translateY(-2px);
+}
+
+/* Chapter Card Hover Effect */
+.chapter-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+  transition: border-color 0.4s ease, transform 0.4s ease;
+}
+
+.chapter-card:hover {
+  border-color: var(--accent-red);
+  transform: translateY(-4px);
+}
+
+/* Glass Gallery Card */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.gallery-card img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(23, 23, 23, 0.95) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+.gallery-card:hover .gallery-card-overlay {
+  opacity: 1;
+}
+
+/* Pulsing Data Node */
+.pulse-red-glow {
+  box-shadow: 0 0 0 0 rgba(218, 0, 55, 0.7);
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(218, 0, 55, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(218, 0, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(218, 0, 55, 0);
+  }
+}
+
+/* Custom Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background-color: var(--accent-red);
+  z-index: 100;
+  width: 0%;
+  transition: width 0.1s ease-out;
+}

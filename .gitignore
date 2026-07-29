@@ -1,0 +1,10 @@
+# Dependencies & Logs
+node_modules/
+.DS_Store
+*.log
+.env
+.env.local
+
+# Temporary files
+.cache/
+dist/
