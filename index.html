@@ -76,6 +76,7 @@
           <a href="#capitulo-01" class="buffalo-underline hover:text-[#DA0037] transition-colors">01. INGENIERÍA</a>
           <a href="#capitulo-02" class="buffalo-underline hover:text-[#DA0037] transition-colors">02. ESTÉTICA</a>
           <a href="#capitulo-03" class="buffalo-underline hover:text-[#DA0037] transition-colors">03. INTELIGENCIA</a>
+          <a href="#capitulo-04" class="buffalo-underline hover:text-[#DA0037] transition-colors">04. SKILLS</a>
         </nav>
         <a href="#contacto" class="trigger-project-modal btn-buffalo-primary text-xs py-2.5 px-5">
           <span>INICIAR PROYECTO</span>
@@ -350,6 +351,118 @@
               <div class="text-2xl font-black text-[#171717]">3.8x</div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capítulo 04: SKILLS & IA (Parallax & Brutalist Editorial) -->
+  <section id="capitulo-04" class="py-28 px-6 bg-[#171717] text-[#EDEDED] transition-colors duration-700 border-t border-[#EDEDED]/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
+        <!-- Sticky Chapter Header -->
+        <div class="lg:col-span-4 lg:sticky lg:top-28">
+          <div class="font-mono-tech text-xs text-[#DA0037] font-bold mb-3 flex items-center gap-2">
+            <span class="w-3 h-0.5 bg-[#DA0037]"></span>
+            <span>04 / SKILLS & IA</span>
+          </div>
+          <h2 class="text-display text-4xl sm:text-5xl lg:text-6xl text-[#EDEDED] mb-6">
+            Ingeniería de Skills y Agentes Autónomos.
+          </h2>
+          <div class="font-mono-tech text-xs text-[#A3A3A3] space-y-2">
+            <div>METODOLOGÍA: KANBAN WORKFLOW</div>
+            <div>MODELOS: AGENTES AUTÓNOMOS DEEP</div>
+            <div>ESCALABILIDAD: ENTERPRISE SKILLS</div>
+          </div>
+        </div>
+
+        <!-- Chapter Description -->
+        <div class="lg:col-span-8 space-y-6">
+          <p class="text-xl sm:text-2xl leading-editorial text-[#A3A3A3]">
+            Diseñamos e integramos habilidades personalizadas de Inteligencia Artificial calibradas para la arquitectura de tu negocio. Desde flujos de trabajo autónomos estructurados bajo metodología Kanban en pizarras de alto impacto visual, hasta pipelines de datos complejos y agentes con memoria persistente. El Búfalo no solo crea la interfaz; entrena la mente digital que opera detrás.
+          </p>
+
+          <!-- Brutalist Skill Tags -->
+          <div class="flex flex-wrap gap-3 pt-2">
+            <span class="brutalist-badge">[ SPRINT KANBAN: 100% VISIBLE ]</span>
+            <span class="brutalist-badge">[ ARQUITECTURA DE AGENTES ]</span>
+            <span class="brutalist-badge">[ ORQUESTACIÓN EN TIEMPO REAL ]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Multi-Layer GSAP Parallax Stage -->
+      <div id="parallax-stage" class="parallax-stage rounded-sm my-12 p-6 md:p-12 relative flex items-center justify-center min-h-[640px] border border-white/20 shadow-2xl overflow-hidden group">
+        
+        <!-- Layer 1: Chalkboard Kanban Background (Back) -->
+        <div id="parallax-layer-kanban" class="parallax-layer-kanban" style="background-image: url('assets/images/buffalo_kanban_bg.jpg');"></div>
+
+        <!-- Red Ambient Radial Glow -->
+        <div class="parallax-layer-[#DA0037]-glow"></div>
+
+        <!-- Layer 2: Buffalo Head Engineer at Setup (Middle) -->
+        <div id="parallax-layer-engineer" class="parallax-layer-engineer max-w-4xl w-full mx-auto relative rounded-sm border border-[#DA0037]/40 shadow-2xl overflow-hidden">
+          <img src="assets/images/buffalo_engineer.jpg" alt="Ingeniero Búfalo desarrollando skills para IA" class="w-full h-[420px] md:h-[480px] object-cover filter contrast-105">
+          <div class="absolute inset-0 background: linear-gradient(to top, rgba(23, 23, 23, 0.9) 0%, transparent 60%);"></div>
+          
+          <!-- Caption Bar -->
+          <div class="absolute bottom-4 left-6 right-6 flex items-center justify-between text-xs font-mono-tech text-white">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#DA0037] pulse-red-glow"></span>
+              <span>DESARROLLO DE SKILLS: ACTIVO</span>
+            </div>
+            <span class="text-[#DA0037] font-bold">[ BÚFALO AI SETUP ]</span>
+          </div>
+        </div>
+
+        <!-- Layer 3: Floating Holographic HUD Code (Front Parallax) -->
+        <div id="parallax-layer-hud" class="parallax-layer-hud p-4 rounded-sm bg-[#171717]/90 text-white font-mono text-xs">
+          <div class="flex items-center justify-between pb-2 mb-3 border-b border-[#DA0037]/40 text-[#DA0037] font-bold">
+            <div class="flex items-center gap-2">
+              <i data-lucide="terminal" class="w-4 h-4"></i>
+              <span>AI_SKILL_ENGINE // SYSTEM_ACTIVE</span>
+            </div>
+            <span>v4.2</span>
+          </div>
+          <img src="assets/images/buffalo_skills_code.jpg" alt="Código HUD de skills para IA" class="w-full h-40 object-cover rounded-sm border border-white/10 mb-3">
+          <div class="text-[11px] text-gray-300 space-y-1">
+            <div class="text-[#DA0037] font-bold">> EXEC: agent.deploy_skill("kanban_orchestrator")</div>
+            <div>> STATUS: OPTIMIZATION_COMPLETE (ACCURACY: 99.8%)</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Feature Grid for Skills Section -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div class="p-8 border border-white/10 bg-[#0A0A0A] rounded-sm hover:border-[#DA0037] transition-colors">
+          <div class="w-10 h-10 bg-[#DA0037] text-white flex items-center justify-center mb-6 rounded-sm font-black">
+            01
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-white">Workflows Kanban Visuales</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Mapeamos cada interacción y tarea del agente en tableros transparentes, eliminando la opacidad en la toma de decisiones con IA.
+          </p>
+        </div>
+
+        <div class="p-8 border border-white/10 bg-[#0A0A0A] rounded-sm hover:border-[#DA0037] transition-colors">
+          <div class="w-10 h-10 bg-[#DA0037] text-white flex items-center justify-center mb-6 rounded-sm font-black">
+            02
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-white">Skills a Medida de Negocio</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Desarrollamos algoritmos específicos para tu industria: desde extracción automática de prospectos hasta pipelines de analítica predictiva.
+          </p>
+        </div>
+
+        <div class="p-8 border border-white/10 bg-[#0A0A0A] rounded-sm hover:border-[#DA0037] transition-colors">
+          <div class="w-10 h-10 bg-[#DA0037] text-white flex items-center justify-center mb-6 rounded-sm font-black">
+            03
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-white">Memoria y Contexto Persistente</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Nuestros agentes retienen el contexto histórico de tu empresa, garantizando respuestas consistentes y alineadas con tu visión de marca.
+          </p>
         </div>
       </div>
     </div>

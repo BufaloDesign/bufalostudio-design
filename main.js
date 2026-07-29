@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGalleryLightbox();
   initProjectModal();
   initNumberCounters();
+  initParallaxSkills();
 });
 
 // Live Header Clock
@@ -40,23 +41,39 @@ function initScrollProgress() {
 
 // Chapter Scroll Observer for Dynamic Background Theme Transition
 function initThemeScrollObserver() {
-  const chapterEstetica = document.getElementById('capitulo-02');
-  if (!chapterEstetica) return;
+  const darkSections = [
+    document.getElementById('capitulo-02'),
+    document.getElementById('capitulo-04')
+  ].filter(Boolean);
+
+  if (!darkSections.length) return;
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && entry.intersectionRatio >= 0.25) {
-        document.body.classList.add('theme-dark');
-      } else {
-        // If not in Chapter 2, revert to default editorial light mode
-        document.body.classList.remove('theme-dark');
-      }
+    const isAnyDarkVisible = darkSections.some(sec => {
+      const rect = sec.getBoundingClientRect();
+      return rect.top < window.innerHeight * 0.75 && rect.bottom > window.innerHeight * 0.25;
     });
+    if (isAnyDarkVisible) {
+      document.body.classList.add('theme-dark');
+    } else {
+      document.body.classList.remove('theme-dark');
+    }
   }, {
     threshold: [0.1, 0.25, 0.5, 0.75]
   });
 
-  observer.observe(chapterEstetica);
+  darkSections.forEach(sec => observer.observe(sec));
+  window.addEventListener('scroll', () => {
+    const isAnyDarkVisible = darkSections.some(sec => {
+      const rect = sec.getBoundingClientRect();
+      return rect.top < window.innerHeight * 0.75 && rect.bottom > window.innerHeight * 0.25;
+    });
+    if (isAnyDarkVisible) {
+      document.body.classList.add('theme-dark');
+    } else {
+      document.body.classList.remove('theme-dark');
+    }
+  });
 }
 
 // Interactive Data Science Canvas Visualization
@@ -262,3 +279,52 @@ function initNumberCounters() {
 
   counters.forEach(c => observer.observe(c));
 }
+
+// Multi-Layer GSAP & Scroll Parallax for Chapter 04 Skills
+function initParallaxSkills() {
+  const section = document.getElementById('capitulo-04');
+  const stage = document.getElementById('parallax-stage');
+  const layerKanban = document.getElementById('parallax-layer-kanban');
+  const layerEngineer = document.getElementById('parallax-layer-engineer');
+  const layerHud = document.getElementById('parallax-layer-hud');
+
+  if (!section || !stage) return;
+
+  function updateParallax() {
+    const rect = stage.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    
+    if (rect.top < viewportHeight && rect.bottom > 0) {
+      const scrollProgress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+      const scrollOffset = (scrollProgress - 0.5) * 200; // range -100 to +100
+
+      if (layerKanban) {
+        layerKanban.style.transform = `translate3d(0, ${scrollOffset * -0.35}px, 0) scale(1.1)`;
+      }
+      if (layerEngineer) {
+        layerEngineer.style.transform = `translate3d(0, ${scrollOffset * 0.12}px, 0)`;
+      }
+      if (layerHud) {
+        layerHud.style.transform = `translate3d(0, ${scrollOffset * -0.65}px, 0)`;
+      }
+    }
+  }
+
+  window.addEventListener('scroll', updateParallax, { passive: true });
+  updateParallax();
+
+  // Mouse Move Cursor Tilt Parallax
+  stage.addEventListener('mousemove', (e) => {
+    const rect = stage.getBoundingClientRect();
+    const mouseX = (e.clientX - rect.left) / rect.width - 0.5;
+    const mouseY = (e.clientY - rect.top) / rect.height - 0.5;
+
+    if (layerHud) {
+      layerHud.style.transform += ` translate3d(${mouseX * 25}px, ${mouseY * 25}px, 0) rotate(${mouseX * 2}deg)`;
+    }
+    if (layerKanban) {
+      layerKanban.style.transform += ` translate3d(${mouseX * -15}px, ${mouseY * -15}px, 0)`;
+    }
+  });
+}
+
