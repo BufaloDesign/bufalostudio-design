@@ -228,6 +228,13 @@ function initProjectModal() {
   const closeModal = () => {
     modal.classList.add('hidden');
     modal.classList.remove('flex');
+    if (form) {
+      form.reset();
+      form.classList.remove('hidden');
+    }
+    if (successMsg) {
+      successMsg.classList.add('hidden');
+    }
   };
 
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
@@ -284,19 +291,28 @@ Quedo atento a su respuesta. ¡Gracias!`;
 
       const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(waText)}`;
 
-      // 3. Abrir WhatsApp en una nueva pestaña
-      window.open(waUrl, '_blank');
+      // Actualizar enlace directo en el modal por si el navegador bloquea ventanas emergentes
+      const manualLink = document.getElementById('manual-wa-link');
+      if (manualLink) {
+        manualLink.href = waUrl;
+      }
 
-      // 4. Mostrar estado de éxito y resetear formulario (sin alterar diseño existente)
+      // 3. Abrir WhatsApp de forma segura en pestaña/aplicación independiente (evita salir del sitio web)
+      try {
+        const tempLink = document.createElement('a');
+        tempLink.href = waUrl;
+        tempLink.target = '_blank';
+        tempLink.rel = 'noopener noreferrer';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
+      } catch (err) {
+        console.log('WA launch info:', err);
+      }
+
+      // 4. Mostrar estado de éxito en el sitio web (la pestaña del usuario permanece 100% activa)
       form.classList.add('hidden');
       if (successMsg) successMsg.classList.remove('hidden');
-
-      setTimeout(() => {
-        closeModal();
-        form.reset();
-        form.classList.remove('hidden');
-        if (successMsg) successMsg.classList.add('hidden');
-      }, 3500);
     });
   }
 }
