@@ -197,6 +197,11 @@ body {
 .pulse-red-glow {
   box-shadow: 0 0 0 0 rgba(218, 0, 55, 0.7);
   animation: pulseGlow 2s infinite;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes pulseGlow {
