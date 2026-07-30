@@ -205,6 +205,9 @@ function initGalleryLightbox() {
 }
 
 // Project Modal Brief Builder
+// Endpoint opcional para seguimiento de Leads en Google Sheets / Google Forms (Script App Webhook)
+const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbz_BUFALO_STUDIO_LEADS_SHEET/exec';
+
 function initProjectModal() {
   const modal = document.getElementById('project-modal');
   const triggers = document.querySelectorAll('.trigger-project-modal');
@@ -235,14 +238,65 @@ function initProjectModal() {
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      // Extract Form Values
+      const nameInput = document.getElementById('brief-name');
+      const emailInput = document.getElementById('brief-email');
+      const serviceInput = document.getElementById('brief-service');
+      const messageInput = document.getElementById('brief-message');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const service = serviceInput ? serviceInput.value : '';
+      const message = messageInput ? messageInput.value.trim() : '';
+
+      // 1. Envío asíncrono a Google Sheets / Google Forms para Registro de Leads
+      try {
+        const formData = new FormData();
+        formData.append('Nombre', name);
+        formData.append('Email', email);
+        formData.append('Servicio', service);
+        formData.append('Mensaje', message);
+        formData.append('Fecha', new Date().toLocaleString());
+
+        fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: formData
+        }).catch(() => {});
+      } catch (err) {
+        console.log('Tracking log:', err);
+      }
+
+      // 2. Formato del Mensaje Personalizado de WhatsApp
+      const targetPhone = '56959397967';
+      const waText = 
+`¡Hola Búfalo Studio! 🦬
+
+Quiero solicitar información y cotización para mi proyecto:
+
+📌 *Nombre / Empresa:* ${name}
+📧 *Correo:* ${email}
+🛠️ *Servicio Requerido:* ${service}
+📝 *Detalles del Proyecto:* ${message || 'Deseo coordinar una asesoría.'}
+
+Quedo atento a su respuesta. ¡Gracias!`;
+
+      const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(waText)}`;
+
+      // 3. Abrir WhatsApp en una nueva pestaña
+      window.open(waUrl, '_blank');
+
+      // 4. Mostrar estado de éxito y resetear formulario (sin alterar diseño existente)
       form.classList.add('hidden');
       if (successMsg) successMsg.classList.remove('hidden');
+
       setTimeout(() => {
         closeModal();
         form.reset();
         form.classList.remove('hidden');
         if (successMsg) successMsg.classList.add('hidden');
-      }, 3000);
+      }, 3500);
     });
   }
 }
