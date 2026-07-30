@@ -2,8 +2,9 @@
 # BÚFALO STUDIO - DIRECTADMIN / APACHE HARDENED SECURITY .HTACCESS
 # ==============================================================================
 
-# 1. DISABLE DIRECTORY BROWSING / INDEXING
+# 1. DISABLE DIRECTORY BROWSING & CUSTOM ERROR 404
 Options -Indexes
+ErrorDocument 404 /404.html
 
 # 2. DEFAULT CHARACTER SET
 AddDefaultCharset UTF-8
