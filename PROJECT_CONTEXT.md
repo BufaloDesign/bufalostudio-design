@@ -20,10 +20,11 @@ Plataforma web de Búfalo Studio construida bajo el concepto **"State of AI Desi
    - **Metadatos & Micro-copia**: `#444444` (Gris plomo).
    - **Acento (Rojo Búfalo)**: `#DA0037` (Uso disciplinado para CTAs principales, indicadores de pulso y subrayado al hover).
 
-2. **Tipografía**:
+2. **Tipografía & Copywriting**:
    - **Titulares (Display)**: Inter / Helvetica Now (`Bold 700` y `Black 900`, `tracking-tighter`, `text-6xl` a `text-9xl`).
    - **Cuerpo (Body)**: Inter Regular `400` con `leading-relaxed` (150%).
    - **Micro-copia (Etiquetas técnicas)**: JetBrains Mono en `#444444`, mayúsculas y `tracking-widest`.
+   - **Regla de Tono / Copywriting**: NO usar las palabras "PyMEs" ni "emprendedores" (evitar percepción de bajo presupuesto). Usar en su lugar **"Empresa"** y **"Marca"**.
 
 ---
 
