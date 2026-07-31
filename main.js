@@ -398,3 +398,107 @@ function initParallaxSkills() {
   });
 }
 
+  // --- Interactive Terminal FAQ Logic ---
+  const terminalBtns = document.querySelectorAll('.terminal-cmd-btn');
+  const terminalInput = document.getElementById('terminal-input');
+  const terminalBody = document.getElementById('terminal-body');
+  const terminalCursorLine = document.getElementById('terminal-cursor-line');
+  let isTerminalTyping = false;
+
+  if (terminalBtns.length > 0 && terminalInput && terminalBody) {
+    const terminalResponses = {
+      "cat tiempo_entrega.txt": [
+        "Consultando base de datos de proyectos...",
+        "...",
+        "Dependiendo de la complejidad, un sitio web corporativo toma entre 2 a 3 semanas.",
+        "Una tienda online (e-commerce) puede tomar de 3 a 5 semanas.",
+        "Siempre establecemos fechas claras por contrato antes de empezar."
+      ],
+      "grep 'pagos' info_comercial.md": [
+        "[MATCH FOUND]",
+        "Trabajamos con un modelo transparente: 50% al iniciar el proyecto y 50% al entregar el sitio funcional y publicado.",
+        "Aceptamos transferencias bancarias y tarjetas de crédito."
+      ],
+      "ping -c 1 mantenimiento": [
+        "PING mantenimiento.bufalo.studio (192.168.1.1): 56 data bytes",
+        "64 bytes from 192.168.1.1: icmp_seq=0 ttl=116 time=24.3 ms",
+        "",
+        "--- Estadísticas de mantenimiento ---",
+        "Te capacitamos para que administres tu sitio web tú mismo sin costo extra.",
+        "Si prefieres que nosotros lo hagamos, ofrecemos planes mensuales de soporte y optimización técnica desde 1 mes en adelante."
+      ],
+      "whoami": [
+        "> BÚFALO STUDIO",
+        "> Tipo: Agencia Digital & Lab de Ingeniería",
+        "> Misión: Ayudar a las marcas a proyectar autoridad en internet.",
+        "> Estado: OPERATIVO. Listos para empezar tu proyecto."
+      ]
+    };
+
+    function typeTerminalText(text, element, speed = 40) {
+      return new Promise(resolve => {
+        let i = 0;
+        element.textContent = '';
+        function type() {
+          if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+          } else {
+            resolve();
+          }
+        }
+        type();
+      });
+    }
+
+    async function executeTerminalCommand(cmd) {
+      if (isTerminalTyping) return;
+      isTerminalTyping = true;
+      
+      // Clear previous input
+      terminalInput.textContent = '';
+      
+      // Type the command
+      await typeTerminalText(cmd, terminalInput, 40);
+      
+      // Create new div for the command history
+      const historyLine = document.createElement('div');
+      historyLine.innerHTML = `<span class="text-[#DA0037]">bufalo@root</span><span class="text-[#A3A3A3]">:</span><span class="text-blue-400">~</span><span class="text-[#A3A3A3]">$</span> ${cmd}`;
+      terminalBody.insertBefore(historyLine, terminalCursorLine);
+      
+      // Process response
+      const lines = terminalResponses[cmd] || ["Command not found"];
+      
+      for (let i = 0; i < lines.length; i++) {
+        await new Promise(r => setTimeout(r, 300)); // typing delay between lines
+        const responseLine = document.createElement('div');
+        
+        if (lines[i].startsWith('>')) {
+          responseLine.className = 'text-green-400';
+        } else if (lines[i].includes('...')) {
+          responseLine.className = 'text-yellow-400';
+        } else if (lines[i].startsWith('[')) {
+          responseLine.className = 'text-blue-400';
+        } else {
+          responseLine.className = 'text-gray-300';
+        }
+        
+        responseLine.textContent = lines[i];
+        terminalBody.insertBefore(responseLine, terminalCursorLine);
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+      }
+      
+      // Reset input line
+      terminalInput.textContent = '';
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+      isTerminalTyping = false;
+    }
+
+    terminalBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cmd = btn.getAttribute('data-cmd');
+        executeTerminalCommand(cmd);
+      });
+    });
+  }

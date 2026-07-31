@@ -401,3 +401,30 @@ body {
   border-radius: 50%;
 }
 
+/* ========================
+   TECH MARQUEE
+   ======================== */
+
+.tech-marquee-content {
+  animation: scroll-marquee 40s linear infinite;
+}
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ========================
+   TERMINAL FAQ
+   ======================== */
+
+#terminal-body::-webkit-scrollbar {
+  width: 4px;
+}
+#terminal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+#terminal-body::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 2px;
+}
+
