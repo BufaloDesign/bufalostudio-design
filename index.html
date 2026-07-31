@@ -93,8 +93,8 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="min-h-screen pt-36 pb-20 px-6 max-w-7xl mx-auto flex flex-col justify-between relative">
-    <div>
+  <section class="min-h-screen pt-36 pb-20 px-6 max-w-7xl mx-auto flex flex-col justify-between relative hero-section">
+    <div class="hero-content">
       <!-- Micro-copia Header Badge -->
       <div class="inline-flex items-center gap-3 px-3 py-1.5 border border-[#444444]/30 rounded-sm mb-8 font-mono-tech text-xs bg-white/40 backdrop-blur-sm">
         <span class="text-[#DA0037] font-bold">[</span>
@@ -104,12 +104,12 @@
 
       <!-- Main Display Title (H1) -->
       <h1 class="text-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl mb-8 tracking-tighter text-[#171717]">
-        Tu Marca existe.<br>
-        <span class="text-[#DA0037]">Ya es hora de que te vean.</span>
+        <span style="font-weight: 700;">Tu Marca existe.</span><br>
+        <span class="text-[#DA0037]" style="font-weight: 900;">Ya es hora de que te vean.</span>
       </h1>
 
       <!-- Subtitle (H2) -->
-      <p class="max-w-3xl text-lg sm:text-xl md:text-2xl leading-editorial text-[#444444] mb-12 font-normal">
+      <p class="max-w-2xl text-lg sm:text-xl md:text-2xl leading-editorial text-[#444444] mb-12 font-normal">
         Creamos el sitio web o la tienda online que tu negocio necesita para atraer clientes, generar confianza y vender todos los días — sin que tengas que saber de tecnología.
       </p>
 
@@ -153,11 +153,6 @@
         </div>
       </div>
     </div>
-        <div class="text-3xl sm:text-4xl font-black text-[#171717] tracking-tight">
-          <span>100% MEDIBLE</span>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- Capítulo 01: INGENIERÍA (Desarrollo Web) -->
@@ -188,17 +183,26 @@
         </p>
 
         <!-- Engineering Tech Cards Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
-          <div class="chapter-card p-8 rounded-sm">
-            <div class="w-10 h-10 bg-[#171717] text-white flex items-center justify-center mb-6 rounded-sm">
-              <i data-lucide="zap" class="w-5 h-5 text-[#DA0037]"></i>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-6">
+
+          <!-- Featured Card: Full Width, Horizontal -->
+          <div class="chapter-card featured-card p-8 rounded-sm lg:col-span-3 flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
+            <div class="w-12 h-12 bg-[#DA0037] text-white flex items-center justify-center rounded-sm shrink-0">
+              <i data-lucide="zap" class="w-6 h-6"></i>
             </div>
-            <h3 class="text-xl font-bold mb-3 text-[#171717]">Sitios Ultrarrápidos</h3>
-            <p class="text-sm text-[#444444] leading-relaxed">
-              Tu sitio carga en segundos. Los clientes no esperan — y Google tampoco. Te posicionamos desde el primer día.
-            </p>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold mb-3 text-[#171717]">Sitios Ultrarrápidos — el primer paso para vender online</h3>
+              <p class="text-sm text-[#444444] leading-relaxed max-w-2xl">
+                Tu sitio carga en segundos. Los clientes no esperan — y Google tampoco. Construimos sobre tecnología profesional para que aparezcas, te vean, y te elijan desde el primer día.
+              </p>
+            </div>
+            <div class="featured-card-stat text-right shrink-0 hidden sm:block">
+              <div class="text-4xl font-black text-[#DA0037] tracking-tight">99.8%</div>
+              <div class="font-mono-tech text-xs text-[#444444] mt-1">VELOCIDAD</div>
+            </div>
           </div>
 
+          <!-- Card 2 -->
           <div class="chapter-card p-8 rounded-sm">
             <div class="w-10 h-10 bg-[#171717] text-white flex items-center justify-center mb-6 rounded-sm">
               <i data-lucide="layers" class="w-5 h-5 text-[#DA0037]"></i>
@@ -209,6 +213,7 @@
             </p>
           </div>
 
+          <!-- Card 3 -->
           <div class="chapter-card p-8 rounded-sm">
             <div class="w-10 h-10 bg-[#171717] text-white flex items-center justify-center mb-6 rounded-sm">
               <i data-lucide="shield-check" class="w-5 h-5 text-[#DA0037]"></i>
@@ -219,6 +224,7 @@
             </p>
           </div>
 
+          <!-- Card 4 -->
           <div class="chapter-card p-8 rounded-sm">
             <div class="w-10 h-10 bg-[#171717] text-white flex items-center justify-center mb-6 rounded-sm">
               <i data-lucide="code-2" class="w-5 h-5 text-[#DA0037]"></i>
@@ -228,6 +234,7 @@
               Cada página, cada botón y cada color de tu sitio refleja la identidad de tu Marca — y genera confianza a primera vista.
             </p>
           </div>
+
         </div>
       </div>
     </div>
@@ -262,14 +269,15 @@
         </div>
       </div>
 
-      <!-- High-End Luxury Product Gallery -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Photo 1: Gourmet Burger / Gastronomía -->
-        <div class="gallery-card gallery-trigger border border-white/10"
+      <!-- High-End Luxury Product Gallery — Asymmetric Editorial Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Photo 1: Featured large — spans 2 cols -->
+        <div class="gallery-card gallery-trigger border border-white/10 md:col-span-2"
              data-img="assets/images/buffalo_burger.jpg"
              data-title="Black Label Gourmet Burger - Gastronomía"
              data-desc="Dirección de arte gastronómica en pizarra mate con esquema de luz cenital dramática y acentos de contraste.">
-          <img src="assets/images/buffalo_burger.jpg" alt="Fotografía gastronómica de hamburguesa gourmet Búfalo Studio" class="w-full h-[420px] object-cover" loading="lazy">
+          <img src="assets/images/buffalo_burger.jpg" alt="Fotografía gastronómica de hamburguesa gourmet Búfalo Studio" class="w-full object-cover gallery-featured-img" loading="lazy">
           <div class="gallery-card-overlay">
             <span class="font-mono-tech text-xs text-[#DA0037] mb-1">[ GASTRONOMÍA & RESTAURANTES ]</span>
             <h4 class="text-xl font-bold text-white mb-2">Gourmet Burger Editorial</h4>
@@ -277,30 +285,35 @@
           </div>
         </div>
 
-        <!-- Photo 2: Clinical Cosmetics -->
-        <div class="gallery-card gallery-trigger border border-white/10"
-             data-img="assets/images/buffalo_cosmetic.jpg"
-             data-title="Aurora Botanicals - Clínica Cosmética"
-             data-desc="Fotografía de producto clínico cosmético con iluminación de precisión en estudio y reflejo dramático en piedra pulida.">
-          <img src="assets/images/buffalo_cosmetic.jpg" alt="Fotografía de cosmética clínica Búfalo Studio" class="w-full h-[420px] object-cover" loading="lazy">
-          <div class="gallery-card-overlay">
-            <span class="font-mono-tech text-xs text-[#DA0037] mb-1">[ CLÍNICA & COSMÉTICA ]</span>
-            <h4 class="text-xl font-bold text-white mb-2">Clinical Skincare Editorial</h4>
-            <p class="text-xs text-gray-300">Toca para ver en detalle →</p>
-          </div>
-        </div>
+        <!-- Right column: 2 stacked images -->
+        <div class="flex flex-col gap-6">
 
-        <!-- Photo 3: Specialty Coffee Shop -->
-        <div class="gallery-card gallery-trigger border border-white/10"
-             data-img="assets/images/buffalo_coffee.jpg"
-             data-title="Artisan Pour-Over - Cafetería de Especialidad"
-             data-desc="Captura de textura y aroma en ambiente cálido de cafetería con acentos tonales carmesí y composición de autor.">
-          <img src="assets/images/buffalo_coffee.jpg" alt="Fotografía de cafetería de especialidad Búfalo Studio" class="w-full h-[420px] object-cover" loading="lazy">
-          <div class="gallery-card-overlay">
-            <span class="font-mono-tech text-xs text-[#DA0037] mb-1">[ CAFETERÍAS & ESPECIALIDAD ]</span>
-            <h4 class="text-xl font-bold text-white mb-2">Specialty Coffee Experience</h4>
-            <p class="text-xs text-gray-300">Toca para ver en detalle →</p>
+          <!-- Photo 2: Clinical Cosmetics -->
+          <div class="gallery-card gallery-trigger border border-white/10 flex-1"
+               data-img="assets/images/buffalo_cosmetic.jpg"
+               data-title="Aurora Botanicals - Clínica Cosmética"
+               data-desc="Fotografía de producto clínico cosmético con iluminación de precisión en estudio y reflejo dramático en piedra pulida.">
+            <img src="assets/images/buffalo_cosmetic.jpg" alt="Fotografía de cosmética clínica Búfalo Studio" class="w-full object-cover gallery-half-img" loading="lazy">
+            <div class="gallery-card-overlay">
+              <span class="font-mono-tech text-xs text-[#DA0037] mb-1">[ CLÍNICA & COSMÉTICA ]</span>
+              <h4 class="text-lg font-bold text-white mb-1">Clinical Skincare</h4>
+              <p class="text-xs text-gray-300">Toca para ver en detalle →</p>
+            </div>
           </div>
+
+          <!-- Photo 3: Specialty Coffee -->
+          <div class="gallery-card gallery-trigger border border-white/10 flex-1"
+               data-img="assets/images/buffalo_coffee.jpg"
+               data-title="Artisan Pour-Over - Cafetería de Especialidad"
+               data-desc="Captura de textura y aroma en ambiente cálido de cafetería con acentos tonales carmesí y composición de autor.">
+            <img src="assets/images/buffalo_coffee.jpg" alt="Fotografía de cafetería de especialidad Búfalo Studio" class="w-full object-cover gallery-half-img" loading="lazy">
+            <div class="gallery-card-overlay">
+              <span class="font-mono-tech text-xs text-[#DA0037] mb-1">[ CAFETERÍAS & ESPECIALIDAD ]</span>
+              <h4 class="text-lg font-bold text-white mb-1">Specialty Coffee</h4>
+              <p class="text-xs text-gray-300">Toca para ver en detalle →</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -528,7 +541,7 @@
 
   <!-- Interactive Project Brief Modal -->
   <div id="project-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md items-center justify-center p-6">
-    <div class="relative max-w-xl w-full bg-[#171717] border border-[#DA0037]/50 p-8 rounded-sm text-white shadow-2xl">
+    <div class="relative max-w-xl w-full modal-tech-bg border border-[#DA0037]/50 p-8 rounded-sm text-white shadow-2xl overflow-hidden">
       <button id="project-modal-close" class="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors">
         <i data-lucide="x" class="w-6 h-6"></i>
       </button>

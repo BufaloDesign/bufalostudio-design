@@ -293,3 +293,111 @@ body {
   font-size: 0.75rem;
 }
 
+/* ========================
+   HERO SECTION: Ghost Image + Atmospheric Glow
+   ======================== */
+
+.hero-section {
+  overflow: hidden;
+}
+
+/* Atmospheric red glow top-right */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: 2%;
+  width: 680px;
+  height: 680px;
+  background: radial-gradient(circle, rgba(218, 0, 55, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Ghost buffalo image fading in from right */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52%;
+  height: 100%;
+  background-image: url('assets/images/buffalo_engineer.jpg');
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.08;
+  filter: grayscale(30%) contrast(120%);
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,1) 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,1) 100%);
+  z-index: 0;
+}
+
+@media (max-width: 1023px) {
+  .hero-section::after {
+    display: none;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================
+   FEATURED CARD (Cap 01)
+   ======================== */
+
+.featured-card {
+  background: linear-gradient(135deg, rgba(218, 0, 55, 0.05) 0%, rgba(255, 255, 255, 0.65) 100%) !important;
+  border-color: rgba(218, 0, 55, 0.25) !important;
+}
+
+.featured-card:hover {
+  background: linear-gradient(135deg, rgba(218, 0, 55, 0.10) 0%, rgba(255, 255, 255, 0.75) 100%) !important;
+  border-color: var(--accent-red) !important;
+}
+
+.featured-card-stat {
+  min-width: 130px;
+  border-left: 1px solid rgba(218, 0, 55, 0.2);
+  padding-left: 1.5rem;
+}
+
+/* ========================
+   GALLERY ASYMMETRIC LAYOUT (Cap 02)
+   ======================== */
+
+.gallery-featured-img {
+  height: 575px !important;
+}
+
+.gallery-half-img {
+  height: 275px !important;
+}
+
+/* ========================
+   MODAL TECH GRID
+   ======================== */
+
+.modal-tech-bg {
+  background-image:
+    linear-gradient(to right, rgba(237, 237, 237, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(237, 237, 237, 0.03) 1px, transparent 1px);
+  background-size: 38px 38px;
+  background-color: #171717;
+}
+
+.modal-tech-bg::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(218, 0, 55, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
