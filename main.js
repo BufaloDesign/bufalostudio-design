@@ -412,8 +412,8 @@ function initTerminalFAQ() {
       "cat tiempo_entrega.txt": [
         "Consultando base de datos de proyectos...",
         "...",
-        "Dependiendo de la complejidad, un sitio web corporativo toma entre 2 a 3 semanas.",
-        "Una tienda online (e-commerce) puede tomar de 3 a 5 semanas.",
+        "Los tiempos de entrega dependen de la escala y el tamaño de tu proyecto.",
+        "Cada desarrollo está sujeto a la evaluación técnica y a la cotización final.",
         "Siempre establecemos fechas claras por contrato antes de empezar."
       ],
       "grep 'pagos' info_comercial.md": [
