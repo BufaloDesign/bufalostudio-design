@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectModal();
   initNumberCounters();
   initParallaxSkills();
+  initTerminalFAQ();
 });
 
 // Live Header Clock
@@ -398,7 +399,8 @@ function initParallaxSkills() {
   });
 }
 
-  // --- Interactive Terminal FAQ Logic ---
+// --- Interactive Terminal FAQ Logic ---
+function initTerminalFAQ() {
   const terminalBtns = document.querySelectorAll('.terminal-cmd-btn');
   const terminalInput = document.getElementById('terminal-input');
   const terminalBody = document.getElementById('terminal-body');
@@ -502,3 +504,4 @@ function initParallaxSkills() {
       });
     });
   }
+}
