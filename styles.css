@@ -323,7 +323,7 @@ body {
   right: 0;
   width: 52%;
   height: 100%;
-  background-image: url('assets/images/buffalo_engineer.jpg');
+  background-image: url('assets/images/buffalo_engineer.webp');
   background-size: cover;
   background-position: center top;
   opacity: 0.08;
@@ -427,4 +427,3 @@ body {
   background: #444;
   border-radius: 2px;
 }
-
