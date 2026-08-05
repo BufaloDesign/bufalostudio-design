@@ -84,8 +84,9 @@
           <a href="#capitulo-03" class="buffalo-underline hover:text-[#DA0037] transition-colors">03. INTELIGENCIA</a>
           <a href="#capitulo-04" class="buffalo-underline hover:text-[#DA0037] transition-colors">04. SKILLS</a>
         </nav>
-        <a href="#contacto" class="trigger-project-modal btn-buffalo-primary text-xs py-2.5 px-5">
-          <span>INICIAR PROYECTO</span>
+        <a href="#contacto" class="trigger-project-modal btn-buffalo-primary text-xs py-2 px-4 sm:py-2.5 sm:px-5">
+          <span class="hidden sm:inline">INICIAR PROYECTO</span>
+          <span class="sm:hidden">INICIAR</span>
           <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
         </a>
       </div>
@@ -93,63 +94,65 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="min-h-screen pt-36 pb-20 px-6 max-w-7xl mx-auto flex flex-col justify-between relative hero-section">
-    <div class="hero-content">
-      <!-- Micro-copia Header Badge -->
-      <div class="inline-flex items-center gap-3 px-3 py-1.5 border border-[#444444]/30 rounded-sm mb-8 font-mono-tech text-xs bg-white/40 backdrop-blur-sm">
-        <span class="text-[#DA0037] font-bold">[</span>
-        <span>PARA MARCAS QUE QUIEREN AVANZAR</span>
-        <span class="text-[#DA0037] font-bold">]</span>
-      </div>
+  <section class="min-h-screen pt-36 pb-20 px-6 relative hero-section flex flex-col">
+    <div class="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-between relative z-10">
+      <div class="hero-content">
+        <!-- Micro-copia Header Badge -->
+        <div class="inline-flex items-center gap-3 px-3 py-1.5 border border-[#444444]/30 rounded-sm mb-8 font-mono-tech text-xs bg-white/40 backdrop-blur-sm">
+          <span class="text-[#DA0037] font-bold">[</span>
+          <span>PARA MARCAS QUE QUIEREN AVANZAR</span>
+          <span class="text-[#DA0037] font-bold">]</span>
+        </div>
 
-      <!-- Main Display Title (H1) -->
-      <h1 class="text-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl mb-8 tracking-tighter text-[#171717]">
-        <span style="font-weight: 700;">Haz que tu presencia digital</span><br>
-        <span class="text-[#DA0037]" style="font-weight: 900;">tenga peso.</span>
-      </h1>
+        <!-- Main Display Title (H1) -->
+        <h1 class="text-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl mb-8 tracking-tighter text-[#171717]">
+          <span style="font-weight: 700;">Haz que tu presencia digital</span><br>
+          <span class="text-[#DA0037]" style="font-weight: 900;">tenga peso.</span>
+        </h1>
 
-      <!-- Subtitle (H2) -->
-      <p class="max-w-2xl text-lg sm:text-xl md:text-2xl leading-editorial text-[#444444] mb-12 font-normal">
-        Unimos dirección de arte, desarrollo web e inteligencia para construir plataformas que se ven bien, cargan rápido y trabajan por tu empresa.
-      </p>
+        <!-- Subtitle (H2) -->
+        <p class="max-w-2xl text-lg sm:text-xl md:text-2xl leading-editorial text-[#444444] mb-12 font-normal">
+          Unimos dirección de arte, desarrollo web e inteligencia para construir plataformas que se ven bien, cargan rápido y trabajan por tu empresa.
+        </p>
 
-      <!-- Primary Action Buttons -->
-      <div class="flex flex-wrap items-center gap-5">
-        <button class="trigger-project-modal btn-buffalo-primary text-sm sm:text-base">
-          <span>Construyamos con impacto</span>
-          <i data-lucide="arrow-right" class="w-5 h-5"></i>
-        </button>
-        <a href="#capitulo-01" class="btn-buffalo-secondary text-sm sm:text-base">
-          <span>Ver qué hacemos</span>
-          <i data-lucide="chevron-down" class="w-5 h-5"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- Live Performance Metrics Ticker Bar -->
-    <div class="mt-16 sm:mt-20 pt-8 border-t border-[#171717]/15 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-      <div class="min-w-0">
-        <div class="font-mono-tech text-[10px] sm:text-xs text-[#444444] mb-1 truncate">PRESENCIA DIGITAL</div>
-        <div class="text-xl sm:text-3xl lg:text-4xl font-black text-[#171717] tracking-tight">
-          <span>100% ONLINE</span>
+        <!-- Primary Action Buttons -->
+        <div class="flex flex-wrap items-center gap-5">
+          <button class="trigger-project-modal btn-buffalo-primary text-sm sm:text-base">
+            <span>Construyamos con impacto</span>
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </button>
+          <a href="#capitulo-01" class="btn-buffalo-secondary text-sm sm:text-base">
+            <span>Ver qué hacemos</span>
+            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+          </a>
         </div>
       </div>
-      <div class="min-w-0">
-        <div class="font-mono-tech text-[10px] sm:text-xs text-[#444444] mb-1 truncate">TIENDAS QUE VENDEN</div>
-        <div class="text-xl sm:text-3xl lg:text-4xl font-black text-[#DA0037] tracking-tighter truncate">
-          <span>WOOCOMMERCE</span>
+
+      <!-- Live Performance Metrics Ticker Bar -->
+      <div class="mt-16 sm:mt-20 pt-8 border-t border-[#171717]/15 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+        <div class="min-w-0">
+          <div class="font-mono-tech text-[10px] sm:text-xs text-[#444444] mb-1 truncate">PRESENCIA DIGITAL</div>
+          <div class="text-xl sm:text-3xl lg:text-4xl font-black text-[#171717] tracking-tight">
+            <span>100% ONLINE</span>
+          </div>
         </div>
-      </div>
-      <div class="min-w-0">
-        <div class="font-mono-tech text-[10px] sm:text-xs text-[#444444] mb-1 truncate">DISEÑO EXCLUSIVO</div>
-        <div class="text-xl sm:text-3xl lg:text-4xl font-black text-[#171717] tracking-tight">
-          <span>A TU MEDIDA</span>
+        <div class="min-w-0">
+          <div class="font-mono-tech text-[10px] sm:text-xs text-[#444444] mb-1 truncate">TIENDAS QUE VENDEN</div>
+          <div class="text-xl sm:text-3xl lg:text-4xl font-black text-[#DA0037] tracking-tighter truncate">
+            <span>WOOCOMMERCE</span>
+          </div>
         </div>
-      </div>
-      <div class="min-w-0">
-        <div class="font-mono-tech text-[10px] sm:text-xs text-[#444444] mb-1 truncate">SITIOS VELOCES</div>
-        <div class="text-xl sm:text-3xl lg:text-4xl font-black text-[#171717] tracking-tight flex items-baseline gap-1">
-          <span class="counter-val" data-target="99.8" data-suffix="%">0%</span>
+        <div class="min-w-0">
+          <div class="font-mono-tech text-[10px] sm:text-xs text-[#444444] mb-1 truncate">DISEÑO EXCLUSIVO</div>
+          <div class="text-xl sm:text-3xl lg:text-4xl font-black text-[#171717] tracking-tight">
+            <span>A TU MEDIDA</span>
+          </div>
+        </div>
+        <div class="min-w-0">
+          <div class="font-mono-tech text-[10px] sm:text-xs text-[#444444] mb-1 truncate">SITIOS VELOCES</div>
+          <div class="text-xl sm:text-3xl lg:text-4xl font-black text-[#171717] tracking-tight flex items-baseline gap-1">
+            <span class="counter-val" data-target="99.8" data-suffix="%">0%</span>
+          </div>
         </div>
       </div>
     </div>
@@ -470,7 +473,7 @@
         <!-- Layer 2: Buffalo Head Engineer at Setup (Middle) -->
         <div id="parallax-layer-engineer" class="parallax-layer-engineer max-w-4xl w-full mx-auto relative rounded-sm border border-[#DA0037]/40 shadow-2xl overflow-hidden">
           <img src="assets/images/buffalo_engineer.webp" alt="Ingeniero Búfalo desarrollando skills para IA" class="w-full h-[420px] md:h-[480px] object-cover filter contrast-105">
-          <div class="absolute inset-0 background: linear-gradient(to top, rgba(23, 23, 23, 0.9) 0%, transparent 60%);"></div>
+          <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(23, 23, 23, 0.9) 0%, transparent 60%);"></div>
           
           <!-- Caption Bar -->
           <div class="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-6 flex flex-wrap items-center justify-between gap-2 text-[10px] sm:text-xs font-mono-tech text-white">
@@ -597,7 +600,7 @@
       </p>
 
       <!-- Primary Action -->
-      <button class="trigger-project-modal btn-buffalo-primary text-base sm:text-lg py-5 px-10">
+      <button class="trigger-project-modal btn-buffalo-primary text-sm sm:text-base md:text-lg py-3.5 px-6 sm:py-5 sm:px-10">
         <span>Quiero hablar con Búfalo Studio</span>
         <i data-lucide="send" class="w-5 h-5"></i>
       </button>
@@ -616,8 +619,8 @@
   </section>
 
   <!-- Lightbox Modal for Gallery -->
-  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md items-center justify-center p-6">
-    <div class="relative max-w-4xl w-full bg-[#171717] border border-white/20 p-6 rounded-sm">
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="relative max-w-4xl w-full bg-[#171717] border border-white/20 p-6 rounded-sm my-auto animate-fade-in">
       <button id="lightbox-close" class="absolute top-4 right-4 text-white hover:text-[#DA0037] transition-colors">
         <i data-lucide="x" class="w-8 h-8"></i>
       </button>
@@ -628,8 +631,8 @@
   </div>
 
   <!-- Interactive Project Brief Modal -->
-  <div id="project-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md items-center justify-center p-6">
-    <div class="relative max-w-xl w-full modal-tech-bg border border-[#DA0037]/50 p-8 rounded-sm text-white shadow-2xl overflow-hidden">
+  <div id="project-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="relative max-w-xl w-full modal-tech-bg border border-[#DA0037]/50 p-6 sm:p-8 rounded-sm text-white shadow-2xl my-auto">
       <button id="project-modal-close" class="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors">
         <i data-lucide="x" class="w-6 h-6"></i>
       </button>
