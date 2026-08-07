@@ -340,30 +340,7 @@ body {
   z-index: 0;
 }
 
-/* Ghost buffalo image fading in from right */
-.hero-section::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 52%;
-  height: 100%;
-  background-image: url('assets/images/buffalo_engineer.webp');
-  background-size: cover;
-  background-position: center top;
-  opacity: 0.08;
-  filter: grayscale(30%) contrast(120%);
-  pointer-events: none;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,1) 100%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,1) 100%);
-  z-index: 0;
-}
 
-@media (max-width: 1023px) {
-  .hero-section::after {
-    display: none;
-  }
-}
 
 .hero-content {
   position: relative;
